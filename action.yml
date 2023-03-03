@@ -5,6 +5,8 @@ runs:
   steps:
     - run: >
         git clone https://github.com/cc65/cc65 /tmp/cc65 &&
-        sudo make -C /tmp/cc65 ca65 ld65 avail &&
+        sudo make -C /tmp/cc65 ca65 ld65 &&
+        sudo ln -s /tmp/cc65/bin/ca65 /usr/local/bin/ca65 &&
+        sudo ln -s /tmp/cc65/bin/ld65 /usr/local/bin/ld65 &&
         ca65 --version
       shell: bash
